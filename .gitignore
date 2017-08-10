@@ -1,0 +1,4 @@
+node_modules
+.DS_Store
+
+mongodb://heroku_dm5ccs2b:qrlame1c64ruinle9gv05ork7k@ds139327.mlab.com:39327/heroku_dm5ccs2b
