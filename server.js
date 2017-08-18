@@ -12,18 +12,29 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+var logger = require('morgan');
 // Requiring our Note and Article models
 var Note = require("./models/Note.js");
 var Article = require("./models/Article.js");
 // Our scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
+
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
 // Initialize Express
 var app = express();
 
+
+// Make public a static dir
+app.use(express.static("public"));
+
+// Use morgan and body parser with our app
+app.use(logger("dev"));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 // Make public a static dir
 app.use(express.static("public"));
@@ -44,11 +55,6 @@ db.once("open", function() {
 
 
 // Routes
-// ======
-app.get("/", function (req, res) {
-  res.send("hello")
-});
-
 
 
 // A GET request to scrape the echojs website
@@ -112,7 +118,7 @@ app.get("/articles/:id", function(req, res) {
   // then responds with the article with the note included
   Article
   .findOne({
-    _id: req.params.id
+    "_id": req.params.id
   })
   .populate("note")
   .exec(function (err, doc) {
@@ -138,7 +144,7 @@ app.post("/articles/:id", function(req, res) {
     } else {
       Article
       .findOneAndUpdate({
-        _id: req.params.id
+        "_id": req.params.id
       }, {
         note: doc._id
       })
