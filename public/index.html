@@ -8,46 +8,9 @@
   <link rel="stylesheet" type="text/css" href="assets/css/scrape_style.css">
 
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Mongo Scrapper</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Saved Articles</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-        </div>
-        <button type="submit" class="btn btn-default">Scrape Articles</button>
-      </form>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-  <div class="container">
-      <h1>Scraping the Wall Street Journal</h1>
-</div>
-
-
     <title>Scraping With Mongoose</title>
     <style>
-      body { background-color: ##F8F8FF}
+      body { background-color: #F8F8FF}
       #wrapper {
         width: 960px;
         margin-left: auto;
@@ -79,12 +42,42 @@
       }
     </style>
   </head>
-  <body>
-    <div id="wrapper">
+
+<body>
+  <div class="container">
+      <h1>Scrapping the Wall Street Journal</h1>
+</div>
+
+ <div id="wrapper">
       <h1>Today's Headlines</h1>
       <div id="articles"></div>
       <div id="notes"></div>
     </div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+  </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Saved Articles</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+        </div>
+        <button type="submit" class="btn btn-default">Scrape Articles</button>
+      </form>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>

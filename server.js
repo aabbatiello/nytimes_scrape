@@ -45,6 +45,11 @@ db.once("open", function() {
 
 // Routes
 // ======
+app.get("/", function (req, res) {
+  res.send("hello")
+});
+
+
 
 // A GET request to scrape the echojs website
 app.get("/scrape", function(req, res) {
